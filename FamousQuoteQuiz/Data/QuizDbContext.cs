@@ -7,9 +7,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FamousQuoteQuiz.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class QuizDbContext : IdentityDbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        public QuizDbContext(DbContextOptions<QuizDbContext> options)
             : base(options)
         {
         }

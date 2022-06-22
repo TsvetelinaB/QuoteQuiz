@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 
 using FamousQuoteQuiz.Data;
+using FamousQuoteQuiz.Models;
+using FamousQuoteQuiz.Services;
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -26,10 +28,9 @@ namespace FamousQuoteQuiz
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
+            services.AddDbContext<QuoteQuizDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DBConnection")));
 
@@ -37,12 +38,13 @@ namespace FamousQuoteQuiz
 
             services.AddDefaultIdentity<IdentityUser>(options => 
                     options.SignIn.RequireConfirmedAccount = false)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+                .AddEntityFrameworkStores<QuoteQuizDbContext>();
 
             services.AddControllersWithViews();
+
+            services.AddTransient<IQuotesService, QuotesService>();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -67,7 +69,6 @@ namespace FamousQuoteQuiz
             app.UseEndpoints(endpoints =>
             {
                 //endpoints.MapDefaultControllerRoute();
-
 
                 endpoints.MapControllerRoute(
                     name: "default",

@@ -1,0 +1,16 @@
+﻿@using FamousQuoteQuiz.ViewModels
+
+@model QuoteViewModel
+    <h6 class="display-4 text-center" style="color: white "><b>Who Said It?</b></h6>
+
+    <div style="background-color: mediumvioletred" class="jumbotron col-lg-12">
+        <h1 class="display-3 text-center" style="color: white"><b>@Model.QuoteText</b></h1>
+
+        <div style="background-color: mediumvioletred" class="jumbotron col-lg-12 col-md-10">
+            <h6 class="display-3 text-center" style="color: white "><b>@Model.AuthorId</b></h6>
+        </div>
+
+        <div class="col-lg-12 text-center align-content-md-center">
+            <h5><a class="btn btn-success">Yes</a></h5>
+        </div>
+    </div>
