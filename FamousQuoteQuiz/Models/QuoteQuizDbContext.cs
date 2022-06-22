@@ -1,8 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
-
-#nullable disable
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace FamousQuoteQuiz.Models
 {
@@ -19,14 +15,6 @@ namespace FamousQuoteQuiz.Models
 
         public virtual DbSet<Author> Authors { get; set; }
         public virtual DbSet<Quote> Quotes { get; set; }
-
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    if (!optionsBuilder.IsConfigured)
-        //    {
-
-        //    }
-        //}
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

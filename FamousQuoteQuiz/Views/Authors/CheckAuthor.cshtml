@@ -1,0 +1,17 @@
+﻿@model AnswerViewModel
+
+<h2 class="display-5 text-left" style="color: gray">Who Said It?</h2>
+
+<div style="background-color: mediumvioletred" class="jumbotron col-lg-12">
+    <h2 class="display-5 text-center" style="color: white">"@Model.QuoteText"</h2>
+</div>
+
+
+<div style="width:90%; margin:auto">
+    <span>
+        @Model.AnswerText
+    </span>
+    <span>
+        @Model.AuthorName
+    </span>
+</div>

@@ -1,0 +1,16 @@
+﻿@model QuoteViewModel
+
+@{
+    ViewData["Title"] = "Quote Quiz";
+}
+
+<h2 class="display-5 text-left" style="color: gray">Who Said It?</h2>
+
+<div style="background-color: mediumvioletred" class="jumbotron col-lg-12">
+    <h2 class="display-5 text-center" style="color: white">"@Model.QuoteText"</h2>
+</div>
+
+<div style="margin-bottom:7rem">
+    <h2 class="display-5 text-center" style="color: forestgreen">@Model.RandomAuthorName?</h2>
+</div>
+

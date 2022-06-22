@@ -1,0 +1,25 @@
+﻿@model QuoteViewModel
+
+<partial name="_QuoteFormPartial" model="Model" />
+
+<div style="width:90%; margin:auto">
+    <span style="float:left; text-align:center">
+        <a class="btn btn-success"
+           asp-controller="Authors"
+           asp-action="CheckAuthor"
+           asp-route-authorId="@Model.AuthorId"
+           asp-route-randomAuthorId ="@Model.RandomAuthorId"
+           asp-route-quoteId ="@Model.Id"
+           >Yes</a>
+
+    </span>
+    <span style="float:right; text-align:center">
+        <a class="btn btn-danger"
+           asp-controller="Authors"
+           asp-action="CheckAuthor"
+           asp-route-authorId="@Model.AuthorId"
+           asp-route-randomAuthorId ="@Model.RandomAuthorId"
+           asp-route-quoteId ="@Model.Id"
+           >No</a>
+    </span>
+</div>

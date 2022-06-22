@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-#nullable disable
-
-namespace FamousQuoteQuiz.Models
+﻿namespace FamousQuoteQuiz.Models
 {
     public partial class Quote
     {

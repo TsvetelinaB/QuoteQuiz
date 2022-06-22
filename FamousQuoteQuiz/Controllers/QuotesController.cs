@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-using FamousQuoteQuiz.Models;
-using FamousQuoteQuiz.Services;
-using FamousQuoteQuiz.ViewModels;
+﻿using FamousQuoteQuiz.Services;
 
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,13 +7,15 @@ namespace FamousQuoteQuiz.Controllers
     public class QuotesController : Controller
     {
         private readonly IQuotesService quotes;
+        private readonly IAuthorsService authors;
 
-        public QuotesController(IQuotesService quotes)
+        public QuotesController(IQuotesService quotes, IAuthorsService authors)
         {
+            this.authors = authors;
             this.quotes = quotes;
         }
 
-        public IActionResult Get()
+        public IActionResult RandomQuote()
         {
             var quote = this.quotes.GetQuote();
 

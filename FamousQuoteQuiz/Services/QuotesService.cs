@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 using FamousQuoteQuiz.Models;
 using FamousQuoteQuiz.ViewModels;
@@ -20,17 +18,28 @@ namespace FamousQuoteQuiz.Services
         public QuoteViewModel GetQuote()
         {
             var quotesCount = this.data.Quotes.Count();
-            var rnd = new Random();
-            var rndQuote = rnd.Next(1, quotesCount + 1);
+            var rndQ = new Random();
+            var rndQuoteNum = rndQ.Next(1, quotesCount + 1);
 
             var quote = this.data.Quotes
-                .Where(q => q.QuoteId == rndQuote)
+                .Where(q => q.QuoteId == rndQuoteNum)
                 .Select(q => new QuoteViewModel
                 {
                     Id = q.QuoteId,
                     QuoteText = q.QuoteText,
-                    AuthorName = q.Author.AuthorName
+                    AuthorId = q.AuthorId,
+                    AuthorName = q.Author.AuthorName,
                 }).FirstOrDefault();
+
+            var authorssCount = this.data.Authors.Count();
+            var rndA = new Random();
+            var rndAuthorNum = rndA.Next(1, authorssCount + 1);
+
+            quote.RandomAuthorId = rndAuthorNum;
+            quote.RandomAuthorName = this.data.Authors
+                .Where(a => a.AuthorId == rndAuthorNum)
+                .Select(q => q.AuthorName)
+                .FirstOrDefault();
 
             return quote;
         }
