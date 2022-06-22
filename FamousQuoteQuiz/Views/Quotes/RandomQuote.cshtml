@@ -8,18 +8,18 @@
            asp-controller="Authors"
            asp-action="CheckAuthor"
            asp-route-authorId="@Model.AuthorId"
-           asp-route-randomAuthorId ="@Model.RandomAuthorId"
-           asp-route-quoteId ="@Model.Id"
-           >Yes</a>
-
+           asp-route-randomAuthorId="@Model.RandomAuthorId"
+           asp-route-quoteId="@Model.Id"
+           asp-route-buttonValue=@("Yes")>Yes</a>
     </span>
+
     <span style="float:right; text-align:center">
         <a class="btn btn-danger"
            asp-controller="Authors"
            asp-action="CheckAuthor"
            asp-route-authorId="@Model.AuthorId"
-           asp-route-randomAuthorId ="@Model.RandomAuthorId"
-           asp-route-quoteId ="@Model.Id"
-           >No</a>
+           asp-route-randomAuthorId="@Model.RandomAuthorId"
+           asp-route-quoteId="@Model.Id"
+           asp-route-buttonValue=@("No")>No</a>
     </span>
 </div>

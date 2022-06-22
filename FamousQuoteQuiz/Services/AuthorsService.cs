@@ -14,13 +14,14 @@ namespace FamousQuoteQuiz.Services
             this.data = data;
         }
 
-        public AnswerViewModel CheckAuthor(int? authorId, int? randomAuthorId, int quoteId)
+        public AnswerViewModel CheckAuthor(int? authorId, int? randomAuthorId, int quoteId, string buttonValue)
         {
             var answerText = "";
 
-            if(authorId == randomAuthorId)
+            if ((buttonValue == "Yes" && authorId == randomAuthorId) || (buttonValue == "No" && authorId != randomAuthorId))
             {
                 answerText = "Correct! The right answer is...";
+                
             }
 
             else

@@ -13,9 +13,9 @@ namespace FamousQuoteQuiz.Controllers
             this.authors = authors;
         }
 
-        public IActionResult CheckAuthor(int? authorId, int? randomAuthorId, int quoteId)
+        public IActionResult CheckAuthor(int? authorId, int? randomAuthorId, int quoteId, string buttonValue)
         {
-            var answer = this.authors.CheckAuthor(authorId, randomAuthorId, quoteId);
+            var answer = this.authors.CheckAuthor(authorId, randomAuthorId, quoteId, buttonValue);
 
             return View(answer);
         }
