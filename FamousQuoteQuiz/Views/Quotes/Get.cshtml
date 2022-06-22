@@ -1,24 +1,27 @@
 ﻿@using FamousQuoteQuiz.ViewModels
 
+@model QuoteViewModel
+
 @{
     ViewData["Title"] = "Quote Quiz";
 }
 
-
-@model QuoteViewModel
 <h2 class="display-5 text-left" style="color: gray">Who Said It?</h2>
 
 <div style="background-color: mediumvioletred" class="jumbotron col-lg-12">
     <h2 class="display-5 text-center" style="color: white">"@Model.QuoteText"</h2>
 </div>
 
-<h2 class="display-5 text-center" style="color: forestgreen">@Model.AuthorName?</h2>
-
-@*<div style="background-color: mediumvioletred" class="jumbotron col-lg-12 col-md-10">
-    <h6 class="display-3 text-center" style="color: white "><b>@Model.AuthorName</b></h6>
-</div>*@
-
-<div class="col-lg-12 text-center align-content-md-center">
-    <h5><a class="btn btn-success">Yes</a></h5>
+<div style="margin-bottom:7rem">
+    <h2 class="display-5 text-center" style="color: forestgreen">@Model.AuthorName?</h2>
 </div>
 
+
+    <div style="width:90%; margin:auto">
+        <span style="float:left; text-align:center">
+            <button class="btn btn-success">Yes</button>
+        </span>
+        <span style="float:right; text-align:center">
+            <button class="btn btn-danger">No</button>
+        </span>
+    </div>
