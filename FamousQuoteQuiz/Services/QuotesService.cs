@@ -29,7 +29,7 @@ namespace FamousQuoteQuiz.Services
                 {
                     Id = q.QuoteId,
                     QuoteText = q.QuoteText,
-                    AuthorId = q.AuthorId
+                    AuthorName = q.Author.AuthorName
                 }).FirstOrDefault();
 
             return quote;

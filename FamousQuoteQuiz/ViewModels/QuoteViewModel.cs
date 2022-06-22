@@ -13,6 +13,6 @@ namespace FamousQuoteQuiz.ViewModels
 
         public string QuoteText { get; set; }
 
-        public int?  AuthorId { get; set; }
+        public string AuthorName { get; set; }
     }
 }
