@@ -31,17 +31,64 @@ namespace FamousQuoteQuiz.Services
                     AuthorName = q.Author.AuthorName,
                 }).FirstOrDefault();
 
+            var rndAuthorNum = GetRandomAuthorId();
+
+            quote.RandomAuthorId = rndAuthorNum;
+            quote.RandomAuthorName = GetAuthorName(rndAuthorNum);
+
+            return quote;
+        }       
+
+        public QuoteViewModel GetQuoteTripleAnswer()
+        {
+            var quote = GetQuote();
+
+            var authorId = quote.AuthorId;
+            var randomAuthorId = quote.RandomAuthorId;
+
+            if(authorId == randomAuthorId)
+            {
+                while(authorId == randomAuthorId)
+                {
+                    randomAuthorId = GetRandomAuthorId();
+                }
+
+                quote.RandomAuthorId = randomAuthorId;
+                quote.RandomAuthorName = GetAuthorName(randomAuthorId);
+            }
+
+            var secondRandomAuthorId = GetRandomAuthorId();
+
+            if(secondRandomAuthorId == authorId || secondRandomAuthorId == randomAuthorId)
+            {
+                while (secondRandomAuthorId == authorId || secondRandomAuthorId == randomAuthorId)
+                {
+                    secondRandomAuthorId = GetRandomAuthorId();
+                }                
+            }
+
+            quote.SecondRandomAuthorId = secondRandomAuthorId;
+            quote.SecondRandomAuthorName = GetAuthorName(secondRandomAuthorId);
+
+            return quote;
+        }
+
+        private int? GetRandomAuthorId()
+        {
             var authorssCount = this.data.Authors.Count();
             var rndA = new Random();
             var rndAuthorNum = rndA.Next(1, authorssCount + 1);
+            return rndAuthorNum;
+        }
 
-            quote.RandomAuthorId = rndAuthorNum;
-            quote.RandomAuthorName = this.data.Authors
-                .Where(a => a.AuthorId == rndAuthorNum)
-                .Select(q => q.AuthorName)
-                .FirstOrDefault();
+        private string GetAuthorName(int? rndAuthorNum)
+        {
+            var name = this.data.Authors
+            .Where(a => a.AuthorId == rndAuthorNum)
+            .Select(q => q.AuthorName)
+            .FirstOrDefault();
 
-            return quote;
+            return name;
         }
     }
 }

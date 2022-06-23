@@ -14,6 +14,10 @@
 
         public string RandomAuthorName { get; set; }
 
+        public int? SecondRandomAuthorId { get; set; }
+
+        public string SecondRandomAuthorName { get; set; }
+
         public string AnswerText { get; set; }
     }
 }

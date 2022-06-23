@@ -5,5 +5,7 @@ namespace FamousQuoteQuiz.Services
     public interface IQuotesService
     {
         QuoteViewModel GetQuote();
+
+        QuoteViewModel GetQuoteTripleAnswer();
     }
 }

@@ -3,7 +3,12 @@
 @{
     ViewData["Title"] = "Quote";
 }
+
 <partial name="_QuoteFormPartial" model="Model" />
+
+<div style="margin-bottom:7rem">
+    <h2 class="display-5 text-center" style="color: forestgreen">@Model.RandomAuthorName?</h2>
+</div>
 
 <div style="width:90%; margin:auto">
     <span style="float:left; text-align:center">

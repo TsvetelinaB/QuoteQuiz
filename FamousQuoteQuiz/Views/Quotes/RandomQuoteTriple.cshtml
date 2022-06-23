@@ -1,0 +1,35 @@
+﻿@model QuoteViewModel
+
+@{
+    ViewData["Title"] = "Quote";
+}
+
+<partial name="_QuoteFormPartial" model="Model" />
+
+<div style="background-color: darkgray" class="container col-lg-8 text-center align-content-lg-center">
+    <a class="button text-center" style="color: white"
+       asp-controller="Authors"
+       asp-action="CorrectAuthor"
+       asp-route-authorId="@Model.AuthorId"
+       asp-route-quoteId="@Model.Id" />
+    <h2>@Model.AuthorName</h2>
+</div>
+
+<div style="background-color: darkgray" class="container col-lg-8 text-center align-content-lg-center">
+    <a class="button text-center" style="color: white"
+       asp-controller="Authors"
+       asp-action="WrongAuthor"
+       asp-route-authorId="@Model.AuthorId"
+       asp-route-quoteId="@Model.Id" />
+    <h2>@Model.RandomAuthorName</h2>
+</div>
+
+<div style="background-color: darkgray" class="container col-lg-8 text-center align-content-lg-center">
+    <a class="button text-center" style="color: white"
+       asp-controller="Authors"
+       asp-action="WrongAuthor"
+       asp-route-authorId="@Model.AuthorId"
+       asp-route-quoteId="@Model.Id" />
+    <h2>@Model.SecondRandomAuthorName</h2>
+</div>
+
