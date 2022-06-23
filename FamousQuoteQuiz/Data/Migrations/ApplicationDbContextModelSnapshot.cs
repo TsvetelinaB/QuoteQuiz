@@ -2,6 +2,7 @@
 using System;
 
 using FamousQuoteQuiz.Data;
+using FamousQuoteQuiz.Models;
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
@@ -10,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FamousQuoteQuiz.Data.Migrations
 {
-    [DbContext(typeof(QuizDbContext))]
+    [DbContext(typeof(QuoteQuizDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

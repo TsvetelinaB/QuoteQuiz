@@ -2,6 +2,7 @@
 using System;
 
 using FamousQuoteQuiz.Data;
+using FamousQuoteQuiz.Models;
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
@@ -11,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FamousQuoteQuiz.Data.Migrations
 {
-    [DbContext(typeof(QuizDbContext))]
+    [DbContext(typeof(QuoteQuizDbContext))]
     [Migration("00000000000000_CreateIdentitySchema")]
     partial class CreateIdentitySchema
     {
