@@ -16,6 +16,11 @@ namespace FamousQuoteQuiz.Controllers
         public IActionResult CheckAuthor(int? authorId, int? randomAuthorId, int quoteId, string buttonValue)
         {
             var answer = this.authors.CheckAuthor(authorId, randomAuthorId, quoteId, buttonValue);
+           
+            if (answer == null)
+            {
+                return NotFound();
+            }
 
             return View("AuthorYesNo", answer);
         }
@@ -24,12 +29,22 @@ namespace FamousQuoteQuiz.Controllers
         {
             var answer = this.authors.CorrectAuthor(authorId, quoteId);
 
+            if (answer == null)
+            {
+                return NotFound();
+            }
+
             return View("AuthorTriple", answer);
         }
 
         public IActionResult WrongAuthor(int? authorId, int quoteId)
         {
             var answer = this.authors.WrongAuthor(authorId, quoteId);
+
+            if (answer == null)
+            {
+                return NotFound();
+            }
 
             return View("AuthorTriple", answer);
         }
