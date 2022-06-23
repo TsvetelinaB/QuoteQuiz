@@ -2,14 +2,18 @@
     ViewData["Title"] = "Settings";
 }
 
-<div style="background-color: white" class="jumbotron col-lg-12">
-    <h1 class="display-4 text-center"><b>Set Up Your Quiz</b></h1>
-</div>
+<div class="container col-lg-12">
+    <h1 class="display-3 text-center"><b>Set Up Your Quiz</b></h1>
 
-<div style="background-color: mediumvioletred" class="jumbotron col-lg-12 text-center align-content-lg-center">
-    <button class="btn btn-outline-primary col-lg-6 display-4 text-center" style="color: white " /><b>Yes-No Answers Quiz</b>
-</div>
+    <div style="background-color: mediumvioletred" class="container jumbotron col-lg-8 text-center align-content-lg-center">
+        <a class="button text-center" style="color: white"
+           asp-controller="Quotes"
+           asp-action="RandomQuote"/>
+        <h2>Yes-No Answers Quiz</h2>
+    </div>
 
-<div style="background-color: mediumvioletred" class="jumbotron col-lg-12 text-center align-content-lg-center">
-    <button class="btn btn-outline-primary col-lg-6 display-4 text-center" style="color: white " /><b>Triple-Choice Answers Quiz</b>
+    <div style="background-color: mediumvioletred" class="container jumbotron col-lg-8 text-center align-content-lg-center">
+        <a class="button text-center" style="color: white " />
+        <h2>Triple-Choice Answers Quiz</h2>
+    </div>
 </div>
