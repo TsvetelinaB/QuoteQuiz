@@ -1,6 +1,4 @@
-using System;
-
-namespace FamousQuoteQuiz.Models
+﻿namespace FamousQuoteQuiz.Models
 {
     public class ErrorViewModel
     {
